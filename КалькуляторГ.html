@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8" />
+    <title>JS Calculator</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div class="row">
+            <input id="display" type="text" />
+        </div>
+            <button onclick="press('0')">0</button>
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+            <button onclick="calc()">=</button>
+            <button onclick="press('+')">+</button>
+            <button onclick="press('-')">-</button>
+            <button onclick="press('*')">*</button>
+            <button onclick="press('/')">/</button>
+            <div class="row"></div>
+        </div>
+    </div>
+    <p>введите число</p>
+    <input id="num1" />
+	<div id="operator_btns">
+	  <button id="plus" onclick="op='+'">+</button>
+	  <button id="minus" onclick="op='-'">-</button>
+	  <button id="times" onclick="op='*'">x</button>
+	  <button id="divide" onclick="op='/'">:</button>
+	</div>
+    <p>введите число</p>
+
+	<input id="num2" />
+	<br>
+
+	<button onclick="func()">=</button>
+	<p id="result"></p>
+    <script>
+         var op; 
+	  function func() {
+	    var result;
+	    var num1 = Number(document.getElementById("num1").value);
+	    var num2 = Number(document.getElementById("num2").value);
+	    switch (op) {
+	      case '+':
+	        result = num1 + num2;
+	        break;
+	      case '-':
+	        result = num1 - num2;
+	        break;
+	      case '*':
+	        result = num1 * num2;
+	        break;
+	      case '/':
+	        result = num1 / num2;
+	        break;
+	    }
+
+        console.table(num1, num2 );
+        document.getElementById("result").innerHTML = result;
+        
+	  }
+        let display = document.getElementById("display");
+    
+        function clear1() {
+            display.value = "";
+        }
+        function calc() {
+            display.value = eval(display.value);
+        }
+        function press(x) {
+            display.value += x;
+        }
+    </script>
+</body>
